@@ -296,25 +296,41 @@ h6 {
 .header {
   width: 100%;
   height: 100vh;
-  padding: 2rem 10%;
+  padding: 2rem 13%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   place-items: center;
-  font-size: 3rem;
+  font-size: 3.3rem;
   font-weight: 900;
   color: white;
-  background-color: #2f5f63;
   min-height: 800px;
   -webkit-animation: show 3s;
           animation: show 3s;
+  background-image: url("../img/bg.jpeg");
+  z-index: 99;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: #2f5f63;
+}
+
+.header .color {
+  position: absolute;
 }
 
 .header .header-left {
-  width: 60%;
   text-align: left;
   -webkit-animation: downmove 0.8s ease-in;
           animation: downmove 0.8s ease-in;
+}
+
+.header .header-left .myname {
+  font-size: 1.3rem;
+  color: #d4f3ae;
+  font-family: "Montserrat";
+  font-weight: 500;
 }
 
 .header .header-left div,
@@ -324,14 +340,8 @@ h6 {
   margin: 1rem 0;
 }
 
-.header .header-right {
-  width: 40%;
-}
-
-.header .header-right img {
-  width: 100%;
-  -webkit-animation: downmove 0.8s ease-in;
-          animation: downmove 0.8s ease-in;
+.header .header-left .text {
+  color: #f1f1e6;
 }
 
 .blink {
@@ -403,10 +413,43 @@ h6 {
 .about .about-content .about-left {
   width: 40%;
   margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .about .about-content .about-left img {
   width: 85%;
+  margin: auto;
+}
+
+.about .about-content .about-left .resume {
+  margin: auto;
+  color: #2f5f63;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid #2f5f63;
+  padding: 0.6rem 1.5rem;
+  margin-top: 1.3rem;
+  border-radius: 20px;
+  -webkit-transition: 0.4s ease-in;
+  transition: 0.4s ease-in;
+}
+
+.about .about-content .about-left .resume i {
+  margin-left: 0.5rem;
+}
+
+.about .about-content .about-left .resume:hover {
+  color: white;
+  background-color: #2f5f63;
 }
 
 .about .about-content .about-right {
@@ -515,7 +558,7 @@ h6 {
 /*********** Works **********/
 .works {
   margin: auto;
-  padding: 6.5rem 20%;
+  padding: 6.5rem 2rem;
 }
 
 .works .work-header {
@@ -524,29 +567,88 @@ h6 {
   margin-bottom: 4rem;
 }
 
-.works .work-header p {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin: 1rem;
-}
-
-.works .row1, .works .row2, .works .row3 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.works .row1,
+.works .row2,
+.works .row3 {
+  display: -ms-grid;
+  display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2rem;
+  place-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: (minmax(300px, 400px))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+  grid-gap: 10%;
+  padding: 4rem 0;
+  text-align: left;
 }
 
-.works .row1 div, .works .row2 div, .works .row3 div {
-  width: 50%;
-  margin: 2rem;
-}
-
-.works .row1 div img, .works .row2 div img, .works .row3 div img {
+.works .row1 img,
+.works .row2 img,
+.works .row3 img {
   width: 100%;
+}
+
+.works .row1 .work-title,
+.works .row2 .work-title,
+.works .row3 .work-title {
+  text-align: left;
+  color: gray;
+  font-size: 1.5rem;
+}
+
+.works .row1 .work-des,
+.works .row2 .work-des,
+.works .row3 .work-des {
+  text-align: left;
+  margin: 1rem 0;
+  line-height: 1.4;
+}
+
+.works .row1 .etc,
+.works .row2 .etc,
+.works .row3 .etc {
+  text-align: left;
+  width: 100%;
+  margin: 0;
+}
+
+.works .row1 .etc div,
+.works .row2 .etc div,
+.works .row3 .etc div {
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+
+.works .row1 .etc span,
+.works .row2 .etc span,
+.works .row3 .etc span {
+  color: gray;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.3rem;
+  margin-right: 0.3rem;
+  border: 1px solid gray;
+  border-radius: 30px;
+}
+
+.works .row1 .etc a,
+.works .row2 .etc a,
+.works .row3 .etc a {
+  margin-left: 0.3rem;
+  color: gray;
+  font-size: 0.9rem;
+  -webkit-transition: 0.4s ease-in;
+  transition: 0.4s ease-in;
+  font-weight: 600;
+}
+
+.works .row1 .etc a:hover,
+.works .row2 .etc a:hover,
+.works .row3 .etc a:hover {
+  color: #2f5f63;
 }
 
 /*********** Footer **********/
@@ -621,6 +723,12 @@ h6 {
 .footer .sns a i:hover {
   -webkit-transform: rotate(-10deg);
           transform: rotate(-10deg);
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 3rem 10%;
+  }
 }
 
 .about-header,

@@ -98,8 +98,8 @@ h6 {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   .navLogo {
     color: $lightgreencolor;
-    &:hover{
-      color:#ff8a43;
+    &:hover {
+      color: #ff8a43;
     }
   }
   .navMenu ul li a {
@@ -176,7 +176,7 @@ h6 {
   .navMenu ul.toggle {
     display: flex;
     padding: 1rem 0;
-    
+
     li {
       padding: 0.5rem 0;
       a {
@@ -185,7 +185,7 @@ h6 {
         cursor: pointer;
         font-weight: 500;
         letter-spacing: 0;
-  
+
         &:hover {
           color: black;
           letter-spacing: 0.2rem;
@@ -230,33 +230,42 @@ h6 {
 .header {
   width: 100%;
   height: 100vh;
-  padding: 2rem 10%;
+  padding: 2rem 13%;
   display: flex;
   place-items: center;
-  font-size: 3rem;
+  font-size: 3.3rem;
   font-weight: 900;
   color: white;
-  background-color: $maincolor;
   min-height: 800px;
   animation: show 3s;
+  background-image: url("../img/bg.jpeg");
+  z-index: 99;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: $maincolor;
 
+  .color {
+    position: absolute;
+  }
   .header-left {
-    width: 60%;
     text-align: left;
     animation: downmove 0.8s ease-in;
+    .myname {
+      font-size: 1.3rem;
+      color: $logocolor;
+      font-family: "Montserrat";
+      font-weight: 500;
+    }
     div,
     span {
       text-align: left;
       font-family: "Ubuntu";
       margin: 1rem 0;
     }
-  }
-
-  .header-right {
-    width: 40%;
-    img {
-      width: 100%;
-      animation: downmove 0.8s ease-in;
+    .text {
+      color: $lightcolor;
     }
   }
 }
@@ -315,18 +324,39 @@ h6 {
       color: gray;
     }
   }
-  .about-content{
+  .about-content {
     display: flex;
 
-    .about-left{
+    .about-left {
       width: 40%;
       margin: auto;
-
-      img{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      img {
         width: 85%;
+        margin: auto;
+      }
+      .resume {
+        margin: auto;
+        color: $maincolor;
+        font-weight: 500;
+        text-decoration: none;
+        border: 1px solid $maincolor;
+        padding: 0.6rem 1.5rem;
+        margin-top: 1.3rem;
+        border-radius: 20px;
+        transition: 0.4s ease-in;
+        i {
+          margin-left: 0.5rem;
+        }
+        &:hover {
+          color: white;
+          background-color: $maincolor;
+        }
       }
     }
-    .about-right{
+    .about-right {
       width: 60%;
       padding: 1.5rem;
       margin: auto;
@@ -339,17 +369,17 @@ h6 {
 }
 
 @media screen and (max-width: 992px) {
-  .about{
-    .about-content{
+  .about {
+    .about-content {
       flex-direction: column;
-      .about-left{
+      .about-left {
         width: 70%;
         margin: auto;
-        img{
+        img {
           width: 100%;
         }
       }
-      .about-right{
+      .about-right {
         width: 100%;
         padding: 2rem;
         margin: auto;
@@ -361,7 +391,6 @@ h6 {
     }
   }
 }
-
 
 /*********** Skills **********/
 
@@ -402,7 +431,6 @@ h6 {
   }
 }
 
-
 @media screen and (max-width: 768px) {
   .skills {
     padding: 6rem 10%;
@@ -415,37 +443,69 @@ h6 {
   }
 }
 
-
 /*********** Works **********/
 .works {
   margin: auto;
-  padding: 6.5rem 20%;
+  padding: 6.5rem 2rem;
   .work-header {
     font-size: 2.8rem;
     color: $maincolor;
     margin-bottom: 4rem;
-    p {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin: 1rem;
-    }
   }
 
-  .row1, .row2, .row3{
-    display: flex;
+  .row1,
+  .row2,
+  .row3 {
+    display: grid;
     justify-content: center;
-    padding: 2rem;
-    div{
-      width: 50%;
-      margin: 2rem;
-      img{
-        width: 100%;
+    place-items: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    grid-gap: 10%;
+    padding: 4rem 0;
+    text-align: left;
+    img {
+      width: 100%;
+    }
+    .work-title {
+      text-align: left;
+      color: gray;
+      font-size: 1.5rem;
+    }
+    .work-des {
+      text-align: left;
+      margin: 1rem 0;
+      line-height: 1.4;
+    }
+    .etc {
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      div {
+        margin: 0 0 1rem 0;
+        text-align: left;
+      }
+      span {
+        color: gray;
+        font-size: 0.85rem;
+        padding: 0.2rem 0.3rem;
+        margin-right: 0.3rem;
+        border: 1px solid gray;
+        border-radius: 30px;
+      }
+      a {
+        margin-left: 0.3rem;
+        color: gray;
+        font-size: 0.9rem;
+        transition: 0.4s ease-in;
+        font-weight: 600;
+        &:hover {
+          color: $maincolor;
+        }
       }
     }
   }
 }
-
-
 
 /*********** Footer **********/
 
@@ -503,6 +563,12 @@ h6 {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 3rem 10%;
+  }
+}
+
 //scroll effect
 
 .about-header,
@@ -550,7 +616,6 @@ h6 {
   transform: scale(1);
 }
 
-
-.nav-scroll .navMenu ul li a.clicked{
+.nav-scroll .navMenu ul li a.clicked {
   color: $lightgreencolor;
 }

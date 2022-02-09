@@ -18,7 +18,7 @@ window.addEventListener("scroll", function () {
 });
 
 // header typing effect
-const sentence = "& I'm a web developer.";
+const sentence = "I'm a web developer.";
 const text = document.querySelector(".text");
 let i = 0;
 function typing() {
@@ -114,9 +114,6 @@ window.addEventListener("scroll", function () {
   } else {
     content.classList.remove("active-right");
   }
-  if (contentPosition < -50) {
-    content.classList.remove("active-right");
-  }
 });
 window.addEventListener("scroll", function () {
   let content = document.querySelector(".about-right");
@@ -125,9 +122,6 @@ window.addEventListener("scroll", function () {
   if (contentPosition < screenPosition) {
     content.classList.add("active-right");
   } else {
-    content.classList.remove("active-right");
-  }
-  if (contentPosition < -50) {
     content.classList.remove("active-right");
   }
 });
@@ -141,9 +135,6 @@ window.addEventListener("scroll", function () {
   } else {
     content.classList.remove("active-right");
   }
-  if (contentPosition < -50) {
-    content.classList.remove("active-right");
-  }
 });
 
 window.addEventListener("scroll", function () {
@@ -155,9 +146,6 @@ window.addEventListener("scroll", function () {
     } else {
       content.classList.remove("active-right");
     }
-    if (contentPosition < -150) {
-        content.classList.remove("active-right");
-      }
   });
   
   window.addEventListener("scroll", function () {
@@ -169,9 +157,6 @@ window.addEventListener("scroll", function () {
     } else {
       content.classList.remove("active-right");
     }
-    if (contentPosition < -150) {
-        content.classList.remove("active-right");
-      }
   });
   window.addEventListener("scroll", function () {
     let content = document.querySelector(".col2-left");
@@ -182,9 +167,6 @@ window.addEventListener("scroll", function () {
     } else {
       content.classList.remove("active-right");
     }
-    if (contentPosition < -150) {
-        content.classList.remove("active-right");
-      }
   });
   window.addEventListener("scroll", function () {
     let content = document.querySelector(".col2-right");
@@ -195,9 +177,6 @@ window.addEventListener("scroll", function () {
     } else {
       content.classList.remove("active-right");
     }
-    if (contentPosition < -150) {
-        content.classList.remove("active-right");
-      }
   });
   
   window.addEventListener("scroll", function () {
@@ -209,9 +188,6 @@ window.addEventListener("scroll", function () {
     } else {
       content.classList.remove("active-right");
     }
-    if (contentPosition < -150) {
-        content.classList.remove("active-right");
-      }
   });
   window.addEventListener("scroll", function () {
     let content = document.querySelector(".col3-right");
@@ -220,9 +196,6 @@ window.addEventListener("scroll", function () {
     if (contentPosition < screenPosition) {
       content.classList.add("active-right");
     } else {
-      content.classList.remove("active-right");
-    }
-    if (contentPosition < -150) {
       content.classList.remove("active-right");
     }
   });
