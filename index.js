@@ -1,9 +1,9 @@
-let menus = document.querySelectorAll('.nav-link');
+let menus = document.querySelectorAll(".nav-link");
 // navbar, btn scroll effect
 window.addEventListener("scroll", function () {
-    for(let i=0; i<menus.length; i++){
-        menus[i].classList.remove("clicked");
-    }
+  for (let i = 0; i < menus.length; i++) {
+    menus[i].classList.remove("clicked");
+  }
   let navbar = document.querySelector(".navbar");
   let upbtn = document.querySelector(".up-btn");
   if (window.pageYOffset > 0) {
@@ -51,7 +51,7 @@ window.addEventListener("scroll", function () {
     content.classList.remove("active-up");
     menus[0].classList.remove("clicked");
   }
-  
+
   if (contentPosition < -50) {
     menus[0].classList.remove("clicked");
     menus[1].classList.add("clicked");
@@ -69,7 +69,7 @@ window.addEventListener("scroll", function () {
     content.classList.remove("active-up");
     menus[1].classList.remove("clicked");
   }
-  
+
   if (contentPosition < -50) {
     menus[1].classList.remove("clicked");
     menus[2].classList.add("clicked");
@@ -82,12 +82,10 @@ window.addEventListener("scroll", function () {
   let screenPosition = window.innerHeight;
   if (contentPosition < screenPosition) {
     content.classList.add("active-up");
-    
   } else {
     content.classList.remove("active-up");
     menus[2].classList.remove("clicked");
   }
-  
 });
 
 window.addEventListener("scroll", function () {
@@ -138,67 +136,67 @@ window.addEventListener("scroll", function () {
 });
 
 window.addEventListener("scroll", function () {
-    let content = document.querySelector(".col1-left");
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight / 1.2;
-    if (contentPosition < screenPosition) {
-      content.classList.add("active-right");
-    } else {
-      content.classList.remove("active-right");
-    }
-  });
-  
-  window.addEventListener("scroll", function () {
-    let content = document.querySelector(".col1-right");
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight / 1.6;
-    if (contentPosition < screenPosition) {
-      content.classList.add("active-right");
-    } else {
-      content.classList.remove("active-right");
-    }
-  });
-  window.addEventListener("scroll", function () {
-    let content = document.querySelector(".col2-left");
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight / 1.2;
-    if (contentPosition < screenPosition) {
-      content.classList.add("active-right");
-    } else {
-      content.classList.remove("active-right");
-    }
-  });
-  window.addEventListener("scroll", function () {
-    let content = document.querySelector(".col2-right");
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight / 1.6;
-    if (contentPosition < screenPosition) {
-      content.classList.add("active-right");
-    } else {
-      content.classList.remove("active-right");
-    }
-  });
-  
-  window.addEventListener("scroll", function () {
-    let content = document.querySelector(".col3-left");
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight / 1.2;
-    if (contentPosition < screenPosition) {
-      content.classList.add("active-right");
-    } else {
-      content.classList.remove("active-right");
-    }
-  });
-  window.addEventListener("scroll", function () {
-    let content = document.querySelector(".col3-right");
-    let contentPosition = content.getBoundingClientRect().top;
-    let screenPosition = window.innerHeight / 1.6;
-    if (contentPosition < screenPosition) {
-      content.classList.add("active-right");
-    } else {
-      content.classList.remove("active-right");
-    }
-  });
+  let content = document.querySelector(".col1-left");
+  let contentPosition = content.getBoundingClientRect().top;
+  let screenPosition = window.innerHeight / 1.2;
+  if (contentPosition < screenPosition) {
+    content.classList.add("active-right");
+  } else {
+    content.classList.remove("active-right");
+  }
+});
+
+window.addEventListener("scroll", function () {
+  let content = document.querySelector(".col1-right");
+  let contentPosition = content.getBoundingClientRect().top;
+  let screenPosition = window.innerHeight / 1.6;
+  if (contentPosition < screenPosition) {
+    content.classList.add("active-right");
+  } else {
+    content.classList.remove("active-right");
+  }
+});
+window.addEventListener("scroll", function () {
+  let content = document.querySelector(".col2-left");
+  let contentPosition = content.getBoundingClientRect().top;
+  let screenPosition = window.innerHeight / 1.2;
+  if (contentPosition < screenPosition) {
+    content.classList.add("active-right");
+  } else {
+    content.classList.remove("active-right");
+  }
+});
+window.addEventListener("scroll", function () {
+  let content = document.querySelector(".col2-right");
+  let contentPosition = content.getBoundingClientRect().top;
+  let screenPosition = window.innerHeight / 1.6;
+  if (contentPosition < screenPosition) {
+    content.classList.add("active-right");
+  } else {
+    content.classList.remove("active-right");
+  }
+});
+
+window.addEventListener("scroll", function () {
+  let content = document.querySelector(".col3-left");
+  let contentPosition = content.getBoundingClientRect().top;
+  let screenPosition = window.innerHeight / 1.2;
+  if (contentPosition < screenPosition) {
+    content.classList.add("active-right");
+  } else {
+    content.classList.remove("active-right");
+  }
+});
+window.addEventListener("scroll", function () {
+  let content = document.querySelector(".col3-right");
+  let contentPosition = content.getBoundingClientRect().top;
+  let screenPosition = window.innerHeight / 1.6;
+  if (contentPosition < screenPosition) {
+    content.classList.add("active-right");
+  } else {
+    content.classList.remove("active-right");
+  }
+});
 
 window.addEventListener("scroll", function () {
   let content = document.querySelector(".sns");
@@ -211,16 +209,13 @@ window.addEventListener("scroll", function () {
   }
 });
 
+for (let i = 0; i < menus.length; i++) {
+  menus[i].addEventListener("click", function () {
+    console.log(menus[i]);
+    for (let i = 0; i < menus.length; i++) {
+      menus[i].classList.remove("clicked");
+    }
 
-
-console.log(menus);
-for(let i=0; i<menus.length; i++){
-    menus[i].addEventListener("click",function(){
-        console.log(menus[i]);
-        for(let i=0; i<menus.length; i++){
-            menus[i].classList.remove("clicked");
-        }
-        
-        menus[i].classList.add("clicked");
-    })
+    menus[i].classList.add("clicked");
+  });
 }
